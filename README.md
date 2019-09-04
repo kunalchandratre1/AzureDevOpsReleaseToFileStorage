@@ -1,2 +1,7 @@
 # AzureDevOpsReleaseToFileStorage
-Powershell tasks in Azure DevOps to release the application to Azure File Storage
+Azure File Storage is an ubiquitous service. It is so useful that I have hardly seen an enterprise not making use of it. Recently Premium tier of File storage is introduced with IOPS as 1,00,000 as opposed to standard File storage which used to offer 1000 IOPS only. This premium tier now even makes Azure File Storage natural choice for high performance demanding applications.
+
+I have been architecting many scenarios and implementations where I used Azure File Storage for running web applications. In such a scenario your application binaries, DLLs, application files [or jar, war files in case Java] are present on Azure File Storage and this Azure File Storage is mapped as a drive to Azure VMs. This Azure VM then runs web servers likes Tomcat, IIS and maps their website path to the drive mapped using Azure File Storage. And this works awesome!
+
+In today’s enterprise world DevOps has become a regular practice. Naturally when you plan to deploy web applications you use pipelines in Azure DevOps. In above scenario you would need to create Build and Release pipeline that will deploy your application to Azure File storage. Unfortunately, there is no default task exist in Azure DevOps that can publish the build output to Azure File Storage. This is what I have built in the scripts. For step by step guide refer - 
+https://sanganakauthority.blogspot.com/2019/09/azure-devops-build-and-release-pipeline.html
